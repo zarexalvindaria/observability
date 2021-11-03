@@ -4,6 +4,17 @@
 
 *TODO:* run `kubectl` command to show the running pods and services for all components. Take a screenshot of the output and include it here to verify the installation
 
+#### All Namespaces
+
+<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/pods_svc_all_ns.png">
+
+#### Monitoring
+
+<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/pods_svc_monitoring_namespace.png">
+
+#### Observability
+
+<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/pods_svc_observability_namespace.png">
 
 
 ## Setup the Jaeger and Prometheus source

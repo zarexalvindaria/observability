@@ -50,7 +50,7 @@ On the other hand, the SLI for a request response time is how long the request t
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
 
-PromQL Commands:
+<!-- PromQL Commands:
 
 1. Average 20x/30x: 
    1. To get count: prometheus_http_requests_total{code=~"2.*"}  and prometheus_http_requests_total{code=~"3.*"} 
@@ -58,16 +58,15 @@ PromQL Commands:
    3. Second metric: sum(prometheus_http_requests_total{code=~"3.*"})/sum(prometheus_http_requests_total)
 2. Average incoming requests response: 
    1. sum(rate(prometheus_http_request_duration_seconds_sum[5m])) / sum(rate(prometheus_http_request_duration_seconds_count[5m]))
-   2. sum(prometheus_http_request_duration_seconds_count) / sum(prometheus_http_request_duration_seconds_sum)
-3. Average 50x:  prometheus_http_requests_total{code=~"5.*"}
+   2. sum(prometheus_http_request_duration_seconds_sum) / sum(prometheus_http_request_duration_seconds_count)
+   3. sum(prometheus_http_request_duration_seconds_count) / sum(prometheus_http_request_duration_seconds_sum)
+3. Average 50x:  sum(prometheus_http_requests_total{code=~"5.*"})/sum(prometheus_http_requests_total)
 4. CPU usage: rate(process_cpu_seconds_total[5m])
-5. Login requests response: 
+-->
 
+#### Prometheus SLI Dashboard
 
-
-rate(prometheus_http_requests_total{code="200"}[1m])
-
-
+<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/dashboard_prometheus_sli.png">
 
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here.

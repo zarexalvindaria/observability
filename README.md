@@ -20,7 +20,7 @@
 ## Setup the Jaeger and Prometheus source
 *TODO:* Expose Grafana to the internet and then setup Prometheus as a data source. Provide a screenshot of the home page after logging into Grafana.
 
-
+<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/grafana_.png">
 
 ## Create a Basic Dashboard
 *TODO:* Create a dashboard in Grafana that shows Prometheus as a source. Take a screenshot and include it here.

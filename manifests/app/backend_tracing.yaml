@@ -17,13 +17,13 @@ spec:
         app: backend
     spec:
       containers:
-      - name: backend
-        image: zarexalvindaria/backend-tracing:latest
-        imagePullPolicy: Always
-        ports:
         - name: backend
-          containerPort: 5050
-          protocol: TCP
+          image: zarexalvindaria/backend-tracing:latest
+          imagePullPolicy: Always
+          ports:
+            - name: backend
+              containerPort: 5050
+              protocol: TCP
 ---
 apiVersion: v1
 kind: Service

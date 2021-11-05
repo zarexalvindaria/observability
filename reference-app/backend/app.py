@@ -17,6 +17,7 @@ app.config['MONGO_URI'] = 'mongodb://example-mongodb-svc.default.svc.cluster.loc
 mongo = PyMongo(app)
 
 
+# Added initialized trace command
 def init_tracer(service):
     logging.getLogger('').handlers = []
     logging.basicConfig(format='%(message)s', level=logging.DEBUG)

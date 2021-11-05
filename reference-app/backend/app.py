@@ -1,17 +1,8 @@
 from flask import Flask, render_template, request, jsonify
-
-import pymongo
 from flask_pymongo import PyMongo
 import logging
 from jaeger_client import Config
 from flask_opentracing import FlaskTracing
-
-app = Flask(__name__)
-
-app.config['MONGO_DBNAME'] = 'example-mongodb'
-app.config['MONGO_URI'] = 'mongodb://example-mongodb-svc.default.svc.cluster.local:27017/example-mongodb'
-
-mongo = PyMongo(app)
 
 
 # Added initialize trace function
@@ -33,6 +24,13 @@ def init_tracer(service):
     # this call also sets opentracing.tracer
     return config.initialize_tracer()
 
+
+app = Flask(__name__)
+
+app.config['MONGO_DBNAME'] = 'example-mongodb'
+app.config['MONGO_URI'] = 'mongodb://example-mongodb-svc.default.svc.cluster.local:27017/example-mongodb'
+
+mongo = PyMongo(app)
 
 tracer = init_tracer('backend')
 tracing = FlaskTracing(tracer, True, app)

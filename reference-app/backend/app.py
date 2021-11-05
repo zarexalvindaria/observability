@@ -4,10 +4,7 @@ import pymongo
 from flask_pymongo import PyMongo
 import logging
 from jaeger_client import Config
-from opentracing.ext import tags
-from opentracing.propagation import Format
-import requests
-from flask_opentracing import FlaskTracer
+from flask_opentracing import FlaskTracing
 
 app = Flask(__name__)
 
@@ -17,7 +14,7 @@ app.config['MONGO_URI'] = 'mongodb://example-mongodb-svc.default.svc.cluster.loc
 mongo = PyMongo(app)
 
 
-# Added initialized trace command
+# Added initialize trace command
 def init_tracer(service):
     logging.getLogger('').handlers = []
     logging.basicConfig(format='%(message)s', level=logging.DEBUG)
@@ -37,6 +34,10 @@ def init_tracer(service):
     return config.initialize_tracer()
 
 
+tracer = init_tracer('backend')
+tracing = FlaskTracing(tracer, True, app)
+
+
 @app.route('/')
 def homepage():
     return "Hello World"
@@ -50,13 +51,13 @@ def my_api():
 
 @app.route('/star', methods=['POST'])
 def add_star():
-  star = mongo.db.stars
-  name = request.json['name']
-  distance = request.json['distance']
-  star_id = star.insert({'name': name, 'distance': distance})
-  new_star = star.find_one({'_id': star_id })
-  output = {'name' : new_star['name'], 'distance' : new_star['distance']}
-  return jsonify({'result' : output})
+    star = mongo.db.stars
+    name = request.json['name']
+    distance = request.json['distance']
+    star_id = star.insert({'name': name, 'distance': distance})
+    new_star = star.find_one({'_id': star_id})
+    output = {'name': new_star['name'], 'distance': new_star['distance']}
+    return jsonify({'result': output})
 
 
 if __name__ == "__main__":

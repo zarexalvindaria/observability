@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: backend
-          image: zarexalvindaria/backend-tracing:latest
+        image: zarexalvindaria/backend-tracing:latest
         imagePullPolicy: Always
         ports:
         - name: backend

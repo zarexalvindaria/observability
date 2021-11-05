@@ -32,11 +32,23 @@
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
 
+SLIs or Service Level Indicators are measurable indicators of how the application/website/service is faring compared to the set promise of the organization to its customers and stakeholders. This promise is also known as SLOs or Service Level Objectives. 
+
+An example SLI for a monthly uptime is the rate of the 20x or 30x (valid requests) responses of the website in a total incoming requests per month. For example, the average 20x or 30x responses of the web application for the month of October 2021 is 97.99%.
+
+On the other hand, the SLI for a request response time is how long the request took to be served. For example, it took an average of 700ms for incoming requests to be served in the month of October 2021.
+
 ## Creating SLI metrics.
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
 
+1. The average 20x or 30x responses of the web application for the month of October 2021 is 97.99%.
+2. It took an average of 700ms for incoming requests to be served for the month of October 2021.
+3. 1.5% of the total incoming requests had 50x responses for the month of October 2021.
+4. The average CPU usage of the web application for the month of October 2021 is 83.67%.
+5. The login requests in the web application for the month of October 2021 took an average of 2 seconds to be served.
+
 ## Create a Dashboard to measure our SLIs
-*TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
+*TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
 
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here.

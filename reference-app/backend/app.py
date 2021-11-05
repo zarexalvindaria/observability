@@ -37,10 +37,10 @@ def init_tracer(service):
 tracer = init_tracer('backend')
 tracing = FlaskTracing(tracer, True, app)
 
+
 @app.route('/')
 def homepage():
     return "Hello World"
-
 
 
 @app.route('/api')

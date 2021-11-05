@@ -55,18 +55,17 @@ PromQL Commands:
 1. Average 20x/30x: 
    1. To get count: prometheus_http_requests_total{code=~"2.*"}  and prometheus_http_requests_total{code=~"3.*"} 
    2. To get the average: sum(prometheus_http_requests_total{code=~"2.*"})/sum(prometheus_http_requests_total)
-2. Average incoming requests response: sum(rate(prometheus_http_request_duration_seconds_sum[5m])) / sum(rate(prometheus_http_request_duration_seconds_count[5m]))
+   3. Second metric: sum(prometheus_http_requests_total{code=~"3.*"})/sum(prometheus_http_requests_total)
+2. Average incoming requests response: 
+   1. sum(rate(prometheus_http_request_duration_seconds_sum[5m])) / sum(rate(prometheus_http_request_duration_seconds_count[5m]))
+   2. sum(prometheus_http_request_duration_seconds_count) / sum(prometheus_http_request_duration_seconds_sum)
 3. Average 50x:  prometheus_http_requests_total{code=~"5.*"}
 4. CPU usage: rate(process_cpu_seconds_total[5m])
 5. Login requests response: 
 
 
 
-sum(rate(prometheus_http_requests_total{code=~"2.*"})) / sum(rate(prometheus_http_requests_total))
-
-sum(rate(prometheus_http_requests_total{code=~"2.*"}[5m]))
-
-sum(rate(http_request_duration_seconds_sum[5m])) / sum(rate(http_request_duration_seconds_count[5m]))
+rate(prometheus_http_requests_total{code="200"}[1m])
 
 
 

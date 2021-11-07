@@ -61,7 +61,7 @@ On the other hand, the SLI for a request response time is how long the request t
    2. sum(prometheus_http_request_duration_seconds_sum) / sum(prometheus_http_request_duration_seconds_count)
    3. sum(prometheus_http_request_duration_seconds_count) / sum(prometheus_http_request_duration_seconds_sum)
 3. [50x Errors] Average 50x:  sum(prometheus_http_requests_total{code=~"5.*"})/sum(prometheus_http_requests_total)
-4. [40x Errors] Average 40x: sum(prometheus_http_requests_total{code=~"5.*"})/sum(prometheus_http_requests_total)
+4. [40x Errors] Average 40x: sum(prometheus_http_requests_total{code=~"4.*"})/sum(prometheus_http_requests_total)
 5. CPU usage: rate(process_cpu_seconds_total[5m])
     -->
 

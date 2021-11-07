@@ -11,8 +11,7 @@ kubectl port-forward svc/frontend-service 8080:8080
 kubectl port-forward svc/backend-service 80:80
 
 # port forward jaeger
-kubectl port-forward -n observability $(kubectl get pods -n observability -l=app="jaeger" -o name) --
-address 0.0.0.0 16686:16686
+kubectl port-forward -n observability $(kubectl get pods -n observability -l=app="jaeger" -o name) --address 0.0.0.0 16686:16686
 
 
 gcloud compute  ssh --ssh-flag="-L 3000:localhost:3000"  --zone "asia-east1-b" "instance-1"

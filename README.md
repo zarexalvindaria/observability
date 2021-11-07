@@ -52,17 +52,18 @@ On the other hand, the SLI for a request response time is how long the request t
 
 <!-- PromQL Commands:
 
-1. Average 20x/30x: 
+1. [Uptime] Average 20x/30x: 
    1. To get count: prometheus_http_requests_total{code=~"2.*"}  and prometheus_http_requests_total{code=~"3.*"} 
    2. To get the average: sum(prometheus_http_requests_total{code=~"2.*"})/sum(prometheus_http_requests_total)
    3. Second metric: sum(prometheus_http_requests_total{code=~"3.*"})/sum(prometheus_http_requests_total)
-2. Average incoming requests response: 
+2. [Response Time] Average incoming requests response: 
    1. sum(rate(prometheus_http_request_duration_seconds_sum[5m])) / sum(rate(prometheus_http_request_duration_seconds_count[5m]))
    2. sum(prometheus_http_request_duration_seconds_sum) / sum(prometheus_http_request_duration_seconds_count)
    3. sum(prometheus_http_request_duration_seconds_count) / sum(prometheus_http_request_duration_seconds_sum)
-3. Average 50x:  sum(prometheus_http_requests_total{code=~"5.*"})/sum(prometheus_http_requests_total)
-4. CPU usage: rate(process_cpu_seconds_total[5m])
--->
+3. [50x Errors] Average 50x:  sum(prometheus_http_requests_total{code=~"5.*"})/sum(prometheus_http_requests_total)
+4. [40x Errors] Average 40x: sum(prometheus_http_requests_total{code=~"5.*"})/sum(prometheus_http_requests_total)
+5. CPU usage: rate(process_cpu_seconds_total[5m])
+  -->
 
 #### Prometheus SLI Dashboard
 

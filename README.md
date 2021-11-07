@@ -4,17 +4,17 @@
 
 *TODO:* run `kubectl` command to show the running pods and services for all components. Take a screenshot of the output and include it here to verify the installation
 
-#### All Namespaces
+#### Pods in all Namespaces
 
-<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/pods_svc_all_ns.png">
+<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/pods_all_ns.png">
 
-#### Monitoring
+#### Services in all Namespaces
 
-<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/pods_svc_monitoring_namespace.png">
+<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/svc_all_ns.png">
 
-#### Observability
+#### Pods and Services in Monitoring and Observability Namespaces
 
-<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/pods_svc_observability_namespace.png">
+<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/pods_svc_monitoring_and_observability_ns.png">
 
 
 ## Setup the Jaeger and Prometheus source
@@ -32,11 +32,11 @@
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
 
-SLIs or Service Level Indicators are measurable indicators of how the application/website/service is faring compared to the set promise of the organization to its customers and stakeholders. This promise is also known as SLOs or Service Level Objectives. 
+SLIs or Service Level Indicators are measurable indicators of how the application/website/service is faring compared to the promise of the organization to its customers and stakeholders. This promise is also known as SLOs or Service Level Objectives. 
 
 An example SLI for a monthly uptime is the rate of the 20x or 30x (valid requests) responses of the website in a total incoming requests per month. For example, the average 20x or 30x responses of the web application for the month of October 2021 is 97.99%.
 
-On the other hand, the SLI for a request response time is how long the request took to be served. For example, it took an average of 700ms for incoming requests to be served in the month of October 2021.
+On the other hand, the SLI for a request response time is how long the request took to be served in actuality. For example, it took an average of 700ms for incoming requests to be served in the month of October 2021.
 
 ## Creating SLI metrics.
 *TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
@@ -100,7 +100,7 @@ Affected Area: star endpoint
 
 Severity: High
 
-Description: The Mongo database cannot be found.
+Description: The Mongo database connection cannot be found.
 
 
 ## Creating SLIs and SLOs
@@ -109,14 +109,14 @@ Description: The Mongo database cannot be found.
 **SLOs:**
 
 1. 99.95% of uptime per month
-2. .03% 40x/50x responses per month.
+2. .03% of 40x/50x responses per month.
 3. Application responses should be served within 1500 ms.
 
 **SLIs:**
 
 1. The average 20x or 30x responses of the web application for the month of October 2021 is 97.99%.
 2. 1.5% of the total incoming requests had 50x responses for the month of October 2021.
-3. It took an average of 465microsecond for incoming requests to be served for the month of October 2021.
+3. It took an average of 465 microsecond for incoming requests to be served for the month of October 2021.
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.

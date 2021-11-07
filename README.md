@@ -117,7 +117,7 @@ Description: The Mongo database connection cannot be found. The tracer span is 2
 
 1. The average 20x or 30x responses of the web application for the month of October 2021 is 97.99%.
 2. 1.5% of the total incoming requests had 50x responses for the month of October 2021.
-3. It took an average of 465 microsecond for incoming requests to be served for the month of October 2021.
+3. It took an average of 1070 ms for incoming requests to be served for the month of October 2021.
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.

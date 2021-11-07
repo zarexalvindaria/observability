@@ -48,7 +48,7 @@ def homepage():
 
 @app.route('/api')
 def my_api():
-    with opentracing.tracer.start_span("homepage", child_of=parent_span) as span:
+    with opentracing.tracer.start_span("api", child_of=parent_span) as span:
         response = {"message": "api"}
         span.set_tag("message", response)
 

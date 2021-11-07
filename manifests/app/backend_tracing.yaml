@@ -22,7 +22,7 @@ spec:
           imagePullPolicy: Always
           ports:
             - name: backend
-              containerPort: 5050
+              containerPort: 8080
               protocol: TCP
 ---
 apiVersion: v1
@@ -34,5 +34,5 @@ spec:
     app: backend
   ports:
     - port: 5050
-      targetPort: 5050
+      targetPort: 8080
   type: LoadBalancer

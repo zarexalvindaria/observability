@@ -121,7 +121,7 @@ Description: The Mongo database connection cannot be found. The tracer span is 2
 2. 1.5% of the total incoming requests had 50x responses for the month of October 2021.
 3. It took an average of 1070 ms for incoming requests to be served for the month of October 2021.
 4. The average CPU usage of the application is 42.65% for the month of October 2021.
-5. The average CPU usage of the application is 300Mib for the month of October 2021.
+5. The average memory usage of the application is 300Mib for the month of October 2021.
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
@@ -142,9 +142,9 @@ Description: The Mongo database connection cannot be found. The tracer span is 2
    - Average monthly CPU usage of pod used by the application - this KPI will indicate how much CPU is used by the source pod of the application.
    - Average monthly CPU usage of all the pods - this KPI will indicate how much CPU is used by all the pods required to run the application.
    - Monthly quota limit - this KPI will indicate whether the application is exceeding its usage of the CPU quota.
-5. The average CPU usage of the application is 300Mib for the month of October 2021.
+5. The average memory usage of the application is 300Mib for the month of October 2021.
    - Average monthly memory usage of pod used by the application - this KPI will indicate how much memory is used by the source pod of the application.
-   - Average monthly CPU usage of all the pods - this KPI will indicate how much memory is used by all the pods required to run the application.
+   - Average monthly memory usage of all the pods - this KPI will indicate how much memory is used by all the pods required to run the application.
    - Monthly quota limit - this KPI will indicate whether the application is exceeding its usage of the memory quota.
 
 ## Building KPIs for our plan

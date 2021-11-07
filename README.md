@@ -63,7 +63,7 @@ On the other hand, the SLI for a request response time is how long the request t
 3. [50x Errors] Average 50x:  sum(prometheus_http_requests_total{code=~"5.*"})/sum(prometheus_http_requests_total)
 4. [40x Errors] Average 40x: sum(prometheus_http_requests_total{code=~"5.*"})/sum(prometheus_http_requests_total)
 5. CPU usage: rate(process_cpu_seconds_total[5m])
-  -->
+    -->
 
 #### Prometheus SLI Dashboard
 
@@ -101,7 +101,7 @@ Affected Area: star endpoint
 
 Severity: High
 
-Description: The Mongo database connection cannot be found.
+Description: The Mongo database connection cannot be found. The tracer span is 2f33c63.
 
 
 ## Creating SLIs and SLOs

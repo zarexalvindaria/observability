@@ -10,6 +10,9 @@ kubectl port-forward -n monitoring prometheus-grafana-588475b7c6-b6m4p 3000
 kubectl port-forward svc/frontend-service 8080:8080
 kubectl port-forward svc/backend-service 80:80
 
+# Apply modified version of backend services
+kubectl apply -f https://raw.githubusercontent.com/zarexalvindaria/observability/main/manifests/app/backend_tracing.yaml
+
 # port forward jaeger
 kubectl port-forward -n observability $(kubectl get pods -n observability -l=app="jaeger" -o name) --address 0.0.0.0 16686:16686
 

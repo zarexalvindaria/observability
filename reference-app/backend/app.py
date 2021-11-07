@@ -53,7 +53,7 @@ def my_api():
         span.set_tag("message", response)
 
         answer = "something"
-        return jsonify(repsonse=answer)
+        return jsonify(response=answer)
 
 
 @app.route('/star', methods=['POST'])

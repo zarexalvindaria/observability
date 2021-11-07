@@ -111,26 +111,51 @@ Description: The Mongo database connection cannot be found. The tracer span is 2
 
 1. 99.95% of uptime per month
 2. .03% of 40x/50x responses per month.
-3. Application responses should be served within 1500 ms.
+3. Application responses should be served within 1500 ms per month.
+4. Monthly average CPU usage should be 60% or less.
+5. Monthly average memory usage should not exceed 600Mib.
 
 **SLIs:**
 
 1. The average 20x or 30x responses of the web application for the month of October 2021 is 97.99%.
 2. 1.5% of the total incoming requests had 50x responses for the month of October 2021.
 3. It took an average of 1070 ms for incoming requests to be served for the month of October 2021.
+4. The average CPU usage of the application is 42.65% for the month of October 2021.
+5. The average CPU usage of the application is 300Mib for the month of October 2021.
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
 
-1. Uptime
-2. Downtime
-3. Average Response Time
+1. The average 20x or 30x responses of the web application for the month of October 2021 is 97.99%.
+   - Monthly uptime - this KPI indicates the total usability of the application.
+   - 20x code responses per month - this KPI indicates availability of the pages of the application.
+   - Monthly traffic - this KPI will indicate the number of requests served by the application.
+2. 1.5% of the total incoming requests had 50x responses for the month of October 2021.
+   - Monthly downtime - this KPI indicates the number of times the application was down
+   - Errors per month - this KPI will indicate the monthly errors encountered in the application.
+   - Monthly traffic - this KPI will indicate the number of requests served by the application.
+3. It took an average of 1070 ms for incoming requests to be served for the month of October 2021.
+   - Average monthly latency - this KPI will indicate the time it took for the application to respond to requests.
+   - Monthly uptime - this KPI indicates the total usability of the application.
+   - Monthly traffic - this KPI will indicate the number of requests served by the application.
+4. The average CPU usage of the application is 42.65% for the month of October 2021.
+   - Average monthly CPU usage of pod used by the application - this KPI will indicate how much CPU is used by the source pod of the application.
+   - Average monthly CPU usage of all the pods - this KPI will indicate how much CPU is used by all the pods required to run the application.
+   - Monthly quota limit - this KPI will indicate whether the application is exceeding its usage of the CPU quota.
+5. The average CPU usage of the application is 300Mib for the month of October 2021.
+   - Average monthly memory usage of pod used by the application - this KPI will indicate how much memory is used by the source pod of the application.
+   - Average monthly CPU usage of all the pods - this KPI will indicate how much memory is used by all the pods required to run the application.
+   - Monthly quota limit - this KPI will indicate whether the application is exceeding its usage of the memory quota.
+
+## Building KPIs for our plan
 
 ## Final Dashboard
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
 
 <img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/final_dashboard.png">
 
-1. Uptime represents 20x/30x responses of the application.
-2. Downtime represents 40x/50x responses of the application.
-3. Average Response Time represents the average response time of the application per request.
+1. Uptime panel - this represents the 20x/30x (successful) responses of the application.
+2. 50x and 40x Errors panel - these represents the 40x/50x (error) responses of the application.
+3. Average Response Time panel - this represents the average response time of the application per request.
+4. CPU Usage panel - this represents the CPU usage of the backend application. This also provides an option to select a few pods for comparison and consolidate the total CPU usage of all the pods per namespace.
+5. Memory Usage panel - this represents the memory usage of the backend application. This also provides an option to select a few pods for comparison and consolidate the total memory usage of all the pods per namespace.

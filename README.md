@@ -94,7 +94,7 @@ Name: Juan dela Cruz
 
 Date: November 6, 2021
 
-Subject: Backend service's star endpoint showing "Method Not Allowed" error 405.
+Subject: Backend service's star endpoint shows "Method Not Allowed" error 405.
 
 Affected Area: star endpoint
 
@@ -109,35 +109,27 @@ Description: The Mongo database cannot be found.
 **SLOs:**
 
 1. 99.95% of uptime per month
-2. .03% 50x responses per month.
+2. .03% 40x/50x responses per month.
 3. Application responses should be served within 1500 ms.
 
 **SLIs:**
 
 1. The average 20x or 30x responses of the web application for the month of October 2021 is 97.99%.
 2. 1.5% of the total incoming requests had 50x responses for the month of October 2021.
-3. It took an average of 700ms for incoming requests to be served for the month of October 2021.
+3. It took an average of 465microsecond for incoming requests to be served for the month of October 2021.
 
 ## Building KPIs for our plan
 *TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
 
-
+1. Uptime
+2. Downtime
+3. Average Response Time
 
 ## Final Dashboard
-<!-- PromQL Commands:
-
-1. Average 20x/30x: 
-   1. To get count: prometheus_http_requests_total{code=~"2.*"}  and prometheus_http_requests_total{code=~"3.*"} 
-   2. To get the average: sum(prometheus_http_requests_total{code=~"2.*"})/sum(prometheus_http_requests_total)
-   3. Second metric: sum(prometheus_http_requests_total{code=~"3.*"})/sum(prometheus_http_requests_total)
-2. Average incoming requests response: 
-   1. sum(rate(prometheus_http_request_duration_seconds_sum[5m])) / sum(rate(prometheus_http_request_duration_seconds_count[5m]))
-   2. sum(prometheus_http_request_duration_seconds_sum) / sum(prometheus_http_request_duration_seconds_count)
-   3. sum(prometheus_http_request_duration_seconds_count) / sum(prometheus_http_request_duration_seconds_sum)
-3. Average 50x:  sum(prometheus_http_requests_total{code=~"5.*"})/sum(prometheus_http_requests_total)
-4. CPU usage: rate(process_cpu_seconds_total[5m])
-   -->
-
-
-
 *TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
+
+<img src="https://raw.githubusercontent.com/zarexalvindaria/observability/main/images/final_dashboard.png">
+
+1. Uptime represents 20x/30x responses of the application.
+2. Downtime represents 40x/50x responses of the application.
+3. Average Response Time represents the average response time of the application per request.
